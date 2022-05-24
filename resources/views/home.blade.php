@@ -11,28 +11,23 @@
 
 <body>
 
-    <h1>STAZIONE TRENI</h1>
+    <h1>TRENI</h1>
     @foreach ($arrayTreni as $treno)
         <div class="train">
             @if ($treno->in_orario === 1)
-                <div>
-                    <strong>
-                        <h2>TRENO IN PARTENZA</h2>
-                    </strong>
-                    <strong>
-                        <h3>Treno n. {{ $treno->codice_treno }} </h3>
-                    </strong>
-                </div>
+                <strong>
+                    <h2>TRENO IN PARTENZA</h2>
+                </strong>
             @else
                 <strong>
                     <h2>TRENO CANCELLATO</h2>
                 </strong>
-                <strong>
-                    <h3>Treno n. {{ $treno->codice_treno }} </h3>
-                </strong>
             @endif
+            <strong>
+                <h3>Treno n. {{ $treno->codice_treno }} </h3>
+            </strong>
             <p>In partenza da: {{ $treno->stazione_di_partenza }}</p>
-            <p>Arrivo a {{ $treno->stazione_di_arrivo }}</p>
+            <p>Arrivo a: {{ $treno->stazione_di_arrivo }}</p>
             <p>Orario di partenza {{ $treno->orario_di_partenza }}</p>
             <p>Orario di arrivo {{ $treno->orario_di_arrivo }}</p>
 
